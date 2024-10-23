@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Page404 from 'pages/Page404';
+import MainLayout from 'layouts/MainLayout';
+import AuthPage404 from 'pages/auth/Page404';
+
+import mainRoutes from 'routes';
+import authRoutes from 'routes/auth';
+
+const App = () => {
+  const router = createBrowserRouter([
+    {
+      element: <MainLayout />,
+      errorElement: <Page404 />,
+      children: mainRoutes,
+    },
+    {
+      element: <MainLayout />,
+      errorElement: <AuthPage404 />,
+      children: authRoutes,
+    },
+  ]);
+
+  return <RouterProvider router={router} />;
+};
 
 export default App;
