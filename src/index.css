@@ -1,3 +1,147 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+  /* text-decoration: none; */
+  @apply m-0 border-0 p-0 outline-none cursor-default list-none box-border;
+}
+
+a,
+a *,
+button,
+button * {
+  cursor: pointer;
+}
+
+.btn-primary {
+  @apply flex gap-2.5 px-22 py-6.5 bg-primary text-white items-center justify-center rounded-md shadow-[2px_8px_8px_0_#56565640] whitespace-nowrap;
+}
+
+.btn-secondary {
+  @apply flex gap-2.5 py-[17px] px-13 text-cyber-grape items-center justify-center rounded-md border-2 border-current font-medium text-xl leading-4 whitespace-nowrap;
+}
+
+/* ================ HEADER STYLING ================= */
+
+nav {
+  @apply flex items-center self-stretch;
+}
+
+nav .nav-link {
+  @apply font-medium text-lg leading-6 text-granite-gray mx-5;
+}
+
+.auth-cta {
+  @apply flex items-center gap-15;
+}
+
+/* ================ FORM STYLING ================= */
+
+.form-heading {
+  @apply font-semibold text-4xl leading-[49px] text-port-gore font-recoleta-alt;
+}
+
+.form-subheading {
+  @apply font-medium text-base leading-5 text-granite-gray;
+}
+
+.register-type {
+  @apply relative h-[85px] flex gap-6 py-7.5 px-5.5 text-heather items-center justify-center rounded-xl border border-titan-white duration-300;
+}
+
+.register-type.active {
+  @apply border-cyber-grape text-haiti;
+}
+
+.register-type.active::after {
+  @apply absolute -right-[19px] -top-[19px] w-[38px] h-[38px] content-[url(./assets/icons/check-circle.svg)];
+}
+
+.register-type.active :is(path, circle) {
+  @apply stroke-cyber-grape;
+}
+
+.form-field {
+  @apply flex flex-col gap-2;
+}
+
+.form-field label {
+  @apply font-medium text-lg leading-6 -tracking-[0.5%] text-cyber-grape;
+}
+
+.form-field .input-container {
+  @apply relative overflow-clip bg-alabaster border-2 border-athens-gray rounded-md h-14 duration-300 focus-within:bg-transparent;
+}
+
+.form-field input {
+  @apply py-4 px-5 bg-transparent w-full placeholder:text-[#B0B0B0] placeholder:font-light duration-300;
+}
+
+/* ================ FOOTER STYLING ================= */
+
+footer {
+  @apply pt-18 pb-10 px-[8.33%] bg-primary text-white flex flex-col;
+}
+
+footer .nav-link {
+  @apply font-medium text-base leading-5 text-wistful;
+}
+
+/* ================ CHECKBOX STYLING ================= */
+/* Hide the default checkbox */
+.checkbox-container input {
+  display: none;
+}
+
+.checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 1.3em;
+  width: 1.3em;
+  background-color: #2196f300;
+  border-radius: 0.25em;
+  transition: all 0.25s;
+}
+
+/* When the checkbox is checked, add a blue background */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #a16ae8;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: '';
+  position: absolute;
+  transform: rotate(0deg);
+  border: 0.1em solid black;
+  left: 0;
+  top: 0;
+  width: 1.05em;
+  height: 1.05em;
+  border-radius: 0.25em;
+  transition: all 0.25s, border-width 0.1s;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked ~ .checkmark:after {
+  left: 0.45em;
+  top: 0.25em;
+  width: 0.25em;
+  height: 0.5em;
+  border-color: #fff0 white white #fff0;
+  border-width: 0 0.15em 0.15em 0;
+  border-radius: 0em;
+  transform: rotate(45deg);
+}
