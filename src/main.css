@@ -582,6 +582,10 @@ video {
   margin-right: auto;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mt-11 {
   margin-top: 2.75rem;
 }
@@ -919,6 +923,11 @@ video {
   line-height: 1.75rem;
 }
 
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .font-medium {
   font-weight: 500;
 }
@@ -937,6 +946,10 @@ video {
 
 .-tracking-\[0\.5\%\] {
   letter-spacing: -0.5%;
+}
+
+.-tracking-\[1\%\] {
+  letter-spacing: -1%;
 }
 
 .text-gull-gray {
@@ -994,6 +1007,10 @@ button * {
   padding-right: 88px;
   padding-top: 26px;
   padding-bottom: 26px;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  line-height: 26px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   --tw-shadow: 2px 8px 8px 0 #56565640;

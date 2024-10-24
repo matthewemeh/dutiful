@@ -15,7 +15,7 @@ button * {
 }
 
 .btn-primary {
-  @apply flex gap-2.5 px-22 py-6.5 bg-primary text-white items-center justify-center rounded-md shadow-[2px_8px_8px_0_#56565640] whitespace-nowrap;
+  @apply flex gap-2.5 px-22 py-6.5 bg-primary text-white items-center justify-center rounded-md shadow-[2px_8px_8px_0_#56565640] whitespace-nowrap font-medium text-lg leading-[26px];
 }
 
 .btn-secondary {
