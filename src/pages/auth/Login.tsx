@@ -56,9 +56,9 @@ const Login = () => {
 
         <button className='btn-primary mt-13'>Login</button>
 
-        <p className='mt-3 text-center text-gull-gray font-medium text-base -tracking-[0.5%]'>
+        <p className='mt-5 text-center text-gull-gray font-medium text-base -tracking-[0.5%]'>
           Don't have an account?&nbsp;
-          <Link to={REGISTER} className='text-pastel-purple'>
+          <Link to={REGISTER} className='text-cyber-grape'>
             Sign Up
           </Link>
         </p>

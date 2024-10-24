@@ -618,6 +618,10 @@ video {
   margin-top: 2rem;
 }
 
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .block {
   display: block;
 }
@@ -757,6 +761,10 @@ video {
 
 .flex-col {
   flex-direction: column;
+}
+
+.flex-col-reverse {
+  flex-direction: column-reverse;
 }
 
 .items-center {
@@ -965,6 +973,11 @@ video {
 .text-port-gore {
   --tw-text-opacity: 1;
   color: rgb(30 30 75 / var(--tw-text-opacity));
+}
+
+.text-cyber-grape {
+  --tw-text-opacity: 1;
+  color: rgb(96 63 139 / var(--tw-text-opacity));
 }
 
 .underline {
