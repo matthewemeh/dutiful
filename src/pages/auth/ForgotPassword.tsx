@@ -26,7 +26,7 @@ const ForgotPassword = () => {
       {emailSent ? (
         <>
           <div className='mt-14 mx-auto w-[139px] h-[139px] rounded-1/2 bg-center bg-no-repeat bg-[url(./assets/icons/mail-2.svg)]' />
-          <p className='mt-3 text-base text-center text-granite-gray max-w-[408px] mx-auto'>
+          <p className='mt-3 font-450 text-base text-center text-granite-gray max-w-[408px] mx-auto'>
             An OTP code has been sent to&nbsp;
             <span className='font-medium'>{email}</span>. Check your email to get the code
           </p>
