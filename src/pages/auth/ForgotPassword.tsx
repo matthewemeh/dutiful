@@ -10,6 +10,11 @@ const ForgotPassword = () => {
 
   return (
     <>
+      <Link
+        to={LOGIN}
+        className='w-8 h-8 mb-11 bg-center bg-no-repeat bg-[url(./assets/icons/back-circled.svg)]'
+      />
+
       <div className='flex flex-col-reverse gap-3'>
         <p className='form-subheading'>
           Enter your email and we'll send you a mail on how to reset your password.

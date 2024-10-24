@@ -638,6 +638,10 @@ video {
   margin-top: 2rem;
 }
 
+.mb-11 {
+  margin-bottom: 2.75rem;
+}
+
 .block {
   display: block;
 }
@@ -682,6 +686,10 @@ video {
   height: 100vh;
 }
 
+.h-8 {
+  height: 2rem;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -716,6 +724,10 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .max-w-\[486px\] {
@@ -884,6 +896,10 @@ video {
 
 .bg-\[url\(\.\/assets\/icons\/mail-1\.svg\)\] {
   background-image: url(./assets/icons/mail-1.svg);
+}
+
+.bg-\[url\(\.\/assets\/icons\/back-circled\.svg\)\] {
+  background-image: url(./assets/icons/back-circled.svg);
 }
 
 .bg-center {
