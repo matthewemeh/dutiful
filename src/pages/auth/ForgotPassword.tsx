@@ -8,14 +8,17 @@ const ForgotPassword = () => {
   const [email, setEmail] = useState('');
   const [emailSent, setEmailSent] = useState(false);
   const {
-    AUTH: { LOGIN },
+    AUTH: { LOGIN, VERIFY_OTP },
   } = PATHS;
 
   const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // simulation of sending an email
-    setTimeout(() => setEmailSent(true), 3000);
+    setTimeout(() => {
+      localStorage.setItem('email', email);
+      setEmailSent(true);
+    }, 3000);
   };
 
   return (
@@ -27,7 +30,9 @@ const ForgotPassword = () => {
             An OTP code has been sent to&nbsp;
             <span className='font-medium'>{email}</span>. Check your email to get the code
           </p>
-          <button className='btn-primary mt-8'>Next</button>
+          <Link to={VERIFY_OTP} className='btn-primary mt-8'>
+            Next
+          </Link>
         </>
       ) : (
         <>

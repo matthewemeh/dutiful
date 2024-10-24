@@ -75,7 +75,7 @@ nav .nav-link {
 }
 
 .form-field input {
-  @apply py-4 px-5 bg-transparent w-full placeholder:text-[#B0B0B0] placeholder:font-light duration-300;
+  @apply py-4 px-5 bg-transparent w-full duration-300;
 }
 
 /* ================ FOOTER STYLING ================= */

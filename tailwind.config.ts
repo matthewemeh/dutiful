@@ -49,6 +49,7 @@ const config: Config = {
         '18': '72px',
         '22': '88px',
       },
+      fontWeight: { '450': '450' },
       borderRadius: { '1/2': '50%' },
       margin: { '13': '52px', '15': '60px' },
       fontFamily: {
