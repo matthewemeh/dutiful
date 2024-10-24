@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import Page404 from 'pages/Page404';
+import AuthLayout from 'layouts/AuthLayout';
 import MainLayout from 'layouts/MainLayout';
 import AuthPage404 from 'pages/auth/Page404';
 
@@ -15,7 +16,7 @@ const App = () => {
       children: mainRoutes,
     },
     {
-      element: <MainLayout />,
+      element: <AuthLayout />,
       errorElement: <AuthPage404 />,
       children: authRoutes,
     },
