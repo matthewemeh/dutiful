@@ -37,8 +37,8 @@ const Login = () => {
             required
             id='password'
             name='password'
-            autoComplete='off'
             extraInputClass='!pr-14'
+            autoComplete='current-password'
             type={passwordVisible ? 'text' : 'password'}>
             <button
               type='button'

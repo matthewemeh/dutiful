@@ -26,8 +26,8 @@ const ResetPassword = () => {
             required
             id='password'
             name='password'
-            autoComplete='off'
             extraInputClass='!pr-14'
+            autoComplete='new-password'
             type={passwordVisible ? 'text' : 'password'}>
             <button
               type='button'
@@ -41,10 +41,10 @@ const ResetPassword = () => {
           <label htmlFor='confirmPassword'>Re-enter new password</label>
           <FormInput
             required
-            autoComplete='off'
             id='confirmPassword'
             name='confirmPassword'
             extraInputClass='!pr-14'
+            autoComplete='new-password'
             type={confirmPasswordVisible ? 'text' : 'password'}>
             <button
               type='button'
