@@ -87,7 +87,7 @@ const Pricing = () => {
   return (
     <main className='bg-white-lilac px-[4.44%]'>
       <div className='info-container bg-white -mx-[4.44%] pt-[69px] pb-14 text-center'>
-        <p className='heading'>Plans to Suit Your Business Budget</p>
+        <h1 className='heading'>Plans to Suit Your Business Budget</h1>
         <p className='sub-heading max-w-[888px] mx-auto'>
           Our fully organized plans deliver valuable content that showcases your services and
           skills, drives Lead, covers all features, and gives customers a clear idea to be able to
@@ -105,7 +105,7 @@ const Pricing = () => {
               ) : (
                 <>
                   <sup>NGN</sup>
-                  <span>{price}</span>
+                  <span>{price.toLocaleString()}</span>
                   <sub>/year</sub>
                 </>
               )}
@@ -122,6 +122,10 @@ const Pricing = () => {
             </ul>
           </div>
         ))}
+      </section>
+
+      <section>
+        <h2></h2>
       </section>
     </main>
   );

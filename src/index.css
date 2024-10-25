@@ -173,11 +173,11 @@ footer .nav-link {
 }
 
 .package-price sup {
-  @apply text-base leading-[23px];
+  @apply text-base leading-[23px] align-super;
 }
 
 .package-price sub {
-  @apply text-xl;
+  @apply text-xl align-middle mb-2 inline-block;
 }
 
 .package-features {
