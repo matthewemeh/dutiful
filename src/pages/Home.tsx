@@ -40,8 +40,8 @@ const Home = () => {
         </div>
       </section>
 
-      <section>
-        <img src={aboutImage} loading='lazy' alt='' className='w-full h-[866px]' />
+      <section className='flex justify-center'>
+        <img src={aboutImage} loading='lazy' alt='' className='max-w-[1312px] w-full h-[866px]' />
       </section>
 
       <section className='flex justify-between gap-10 pl-[8.89%] pr-[5.56%]'>
