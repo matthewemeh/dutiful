@@ -157,3 +157,33 @@ footer .nav-link {
 .contact-info .content {
   @apply font-450 text-lg leading-[23px] text-storm-dust text-center;
 }
+
+/* ================ PACKAGE CARDS STYLING ================= */
+
+.package-card {
+  @apply flex-1 rounded-lg bg-white pt-18 pb-8 px-5 text-black;
+}
+
+.package-type {
+  @apply font-medium text-[22px] leading-8 mx-1 capitalize;
+}
+
+.package-price {
+  @apply mt-5 mx-1 font-recoleta-alt font-semibold text-5xl leading-[67px];
+}
+
+.package-price sup {
+  @apply text-base leading-[23px];
+}
+
+.package-price sub {
+  @apply text-xl;
+}
+
+.package-features {
+  @apply mt-11 flex flex-col gap-6;
+}
+
+.package-feature {
+  @apply relative font-450 text-xl text-granite-gray pl-12 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-6 before:h-6 before:content-[url(./assets/icons/check-black.svg)];
+}

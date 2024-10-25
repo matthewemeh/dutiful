@@ -34,6 +34,7 @@ const config = {
         'port-gore': '#1E1E4B',
         'storm-dust': '#656565',
         'titan-white': '#EEEEFF',
+        'white-lilac': '#FCFAFF',
         'athens-gray': '#E7EAF1',
         'cyber-grape': '#603F8B',
         'granite-gray': '#686868',
