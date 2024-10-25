@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import User from 'components/icons/User';
 import Store from 'components/icons/Store';
@@ -11,13 +11,31 @@ import { PATHS } from 'routes/PathConstants';
 type RegType = 'user' | 'service-provider';
 
 const Register = () => {
+  const navigate = useNavigate();
   const [regType, setRegType] = useState<RegType>('user');
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
 
   const {
-    AUTH: { LOGIN },
+    AUTH: { LOGIN, VERIFY_OTP },
   } = PATHS;
+
+  const handleSignUp = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // simulation of signing up
+    const formElement = e.target as EventTarget & HTMLFormElement;
+    const form = new FormData(formElement);
+    const { email, termsAgreed } = Object.fromEntries(form.entries());
+    if (!termsAgreed) {
+      return window.alert('Please kindly agree to the terms and conditions');
+    }
+
+    setTimeout(() => {
+      sessionStorage.setItem('email', email as string);
+      navigate(VERIFY_OTP);
+    }, 3000);
+  };
 
   return (
     <>
@@ -43,7 +61,7 @@ const Register = () => {
         </button>
       </div>
 
-      <form className='flex flex-col mt-15'>
+      <form className='flex flex-col mt-15' onSubmit={handleSignUp}>
         <div className='form-field'>
           <label htmlFor='fullName'>Full Name</label>
           <FormInput required id='fullName' name='fullName' autoComplete='name' type='text' />
@@ -108,9 +126,9 @@ const Register = () => {
         </div>
 
         <div className='flex gap-2.5 items-center mt-3'>
-          <Checkbox required />
+          <Checkbox id='termsAgreed' name='termsAgreed' />
           <p>
-            I agree to Dutiful's{' '}
+            I agree to Dutiful's&nbsp;
             <Link to='/' className='text-pastel-purple'>
               terms and conditions
             </Link>

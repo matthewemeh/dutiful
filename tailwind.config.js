@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss';
+/** @type {import('tailwindcss').Config} */
 
 const sanSerifFonts = [
   'system-ui',
@@ -16,7 +16,7 @@ const sanSerifFonts = [
 
 const serifFonts = ['Cambria', 'Cochin', 'Georgia', 'Times New Roman', 'serif'];
 
-const config: Config = {
+const config = {
   content: ['./src/**/**/*.{js,jsx,ts,tsx}', './public/*.html'],
   theme: {
     extend: {
@@ -26,6 +26,7 @@ const config: Config = {
         affair: '#63428E',
         primary: '#532F82',
         heather: '#B1BDCA',
+        tuatara: '#383838',
         wistful: '#B6B6E5',
         alabaster: '#F8FAFD',
         'gull-gray': '#A3B1BF',
@@ -38,24 +39,25 @@ const config: Config = {
         'granite-gray': '#686868',
         'pastel-purple': '#A16AE8',
       },
-      gap: { '15': '60px' },
-      height: { '15': '60px' },
-      width: { '15': '60px', '30': '120px' },
+      gap: { 15: '60px' },
+      height: { 15: '60px' },
+      width: { 15: '60px', 30: '120px' },
       padding: {
-        '5.5': '22px',
-        '6.5': '26px',
-        '7.5': '30px',
-        '13': '52px',
-        '18': '72px',
-        '22': '88px',
+        5.5: '22px',
+        6.5: '26px',
+        7.5: '30px',
+        13: '52px',
+        18: '72px',
+        22: '88px',
       },
-      fontWeight: { '450': '450' },
+      fontWeight: { 450: '450' },
       borderRadius: { '1/2': '50%' },
-      margin: { '13': '52px', '15': '60px' },
+      margin: { 13: '52px', 15: '60px', 18: '72px' },
       fontFamily: {
         'recoleta-alt': ['Recoleta Alt', ...serifFonts],
         'circular-std': ['Circular Std', ...sanSerifFonts],
       },
+      transitionDuration: { 250: '250ms' },
       keyframes: {
         'rotate-right': {
           from: { transform: 'rotate(0)' },

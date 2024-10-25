@@ -1,16 +1,45 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useMemo, useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { PATHS } from 'routes/PathConstants';
 import FormInput from 'components/FormInput';
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [confirmPasswordVisible, setConfirmPasswordVisible] = useState(false);
+  const email: string | null = useMemo(() => sessionStorage.getItem('email'), []);
 
   const {
-    AUTH: { REGISTER },
+    AUTH: { REGISTER, LOGIN },
   } = PATHS;
+
+  useEffect(() => {
+    if (!email) navigate(LOGIN);
+  }, [email]);
+
+  const removeEmail = async (): Promise<boolean> => {
+    return new Promise((resolve, reject) => {
+      try {
+        sessionStorage.removeItem('email');
+        resolve(true);
+      } catch (error) {
+        reject(false);
+      }
+    });
+  };
+
+  const resetPassword = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    setTimeout(() => {
+      // update user password in backend before removing email
+      removeEmail().then(removed => {
+        if (removed) navigate(LOGIN);
+        else window.alert('Could not reset password');
+      });
+    }, 2000);
+  };
 
   return (
     <>
@@ -19,7 +48,20 @@ const ResetPassword = () => {
         <p className='form-heading'>Reset password</p>
       </div>
 
-      <form className='flex flex-col mt-15'>
+      <form className='flex flex-col mt-15' onSubmit={resetPassword}>
+        <div className='form-field !hidden'>
+          <label htmlFor='email'>Email</label>
+          <FormInput
+            readOnly
+            id='email'
+            name='email'
+            type='email'
+            value={email as string}
+            inputMode='email'
+            autoComplete='email'
+          />
+        </div>
+
         <div className='form-field'>
           <label htmlFor='password'>Enter new password</label>
           <FormInput

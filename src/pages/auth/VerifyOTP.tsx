@@ -13,40 +13,21 @@ const VerifyOTP = () => {
 
   const navigate = useNavigate();
   const [enteredOtp, setEnteredOtp] = useState('');
-  const email: string | null = useMemo(() => localStorage.getItem('email'), []);
+  const email: string | null = useMemo(() => sessionStorage.getItem('email'), []);
 
   useEffect(() => {
     if (!email) navigate(LOGIN);
   }, [email]);
 
-  const removeEmail = async (): Promise<boolean> => {
-    return new Promise((resolve, reject) => {
-      try {
-        localStorage.removeItem('email');
-        resolve(true);
-      } catch (error) {
-        reject(false);
-      }
-    });
-  };
-
   const confirmOTP = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (enteredOtp.length < OTP_LENGTH) {
-      window.alert('Please fill in OTP completely');
-      return;
+      return window.alert('Please fill in OTP completely');
     }
 
-    // simulation of confirming the OTP
-    setTimeout(() => {
-      // verify OTP here and then remove email
-      removeEmail()
-        .then(removed => {
-          if (removed) navigate(RESET_PASSWORD);
-        })
-        .catch(() => window.alert('Failed to remove '));
-    }, 3000);
+    // simulation of verifying the OTP
+    setTimeout(() => navigate(RESET_PASSWORD), 3000);
   };
 
   return (
@@ -56,7 +37,7 @@ const VerifyOTP = () => {
         <p className='mt-3 font-450 text-base text-center text-granite-gray mx-auto'>
           Enter OTP code that was sent to your email,
           <br />
-          <span className='font-medium'>segunsolaru@gmail.com.</span>
+          <span className='font-medium'>{email}</span>
         </p>
         <button className='btn-primary mt-8'>Confirm OTP</button>
 

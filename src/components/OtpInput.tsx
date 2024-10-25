@@ -44,11 +44,11 @@ const OtpInput: React.FC<Props> = ({ otp, setOtp, numberOfDigits = 5 }) => {
         key={index}
         value={value}
         maxLength={1}
-        autoComplete='off'
         inputMode='numeric'
         onChange={updateOtp}
         onKeyUp={updateFocus}
         autoFocus={isFirstInput}
+        autoComplete='one-time-code'
         className={`w-[75px] h-[75px] border-2 border-wistful duration-300 rounded-[10px] text-center font-medium text-3xl focus:bg-transparent ${
           value ? 'bg-transparent' : 'bg-wild-sand'
         }`}

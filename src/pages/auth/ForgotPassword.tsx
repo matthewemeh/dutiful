@@ -16,7 +16,7 @@ const ForgotPassword = () => {
 
     // simulation of sending an email
     setTimeout(() => {
-      localStorage.setItem('email', email);
+      sessionStorage.setItem('email', email);
       setEmailSent(true);
     }, 3000);
   };
