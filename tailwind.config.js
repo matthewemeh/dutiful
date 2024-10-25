@@ -40,8 +40,8 @@ const config = {
         'pastel-purple': '#A16AE8',
       },
       gap: { 15: '60px' },
-      height: { 15: '60px' },
       width: { 15: '60px', 30: '120px' },
+      height: { 15: '60px', unset: 'unset' },
       padding: {
         5.5: '22px',
         6.5: '26px',
@@ -50,6 +50,7 @@ const config = {
         18: '72px',
         22: '88px',
       },
+      inset: { 30: '120px' },
       fontWeight: { 450: '450' },
       borderRadius: { '1/2': '50%' },
       margin: { 13: '52px', 15: '60px', 18: '72px' },

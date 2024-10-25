@@ -5,7 +5,7 @@ import appointmentsImage from 'assets/appointements.png';
 
 const Home = () => {
   return (
-    <div className='pb-[116px]'>
+    <main className='px-[4.44%] pb-[116px]'>
       <section className='flex justify-between'>
         <div className='main info-container mt-48 max-w-[560px]'>
           <p className='heading'>
@@ -56,7 +56,7 @@ const Home = () => {
           </p>
         </div>
       </section>
-    </div>
+    </main>
   );
 };
 

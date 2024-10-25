@@ -10,11 +10,9 @@ const MainLayout = () => {
     <div>
       <Header />
 
-      <main className='px-[4.44%]'>
-        <Suspense fallback={<Loading />}>
-          <Outlet />
-        </Suspense>
-      </main>
+      <Suspense fallback={<Loading />}>
+        <Outlet />
+      </Suspense>
 
       <Footer />
     </div>

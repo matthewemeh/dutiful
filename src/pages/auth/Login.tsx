@@ -43,7 +43,11 @@ const Login = () => {
             <button
               type='button'
               onClick={() => setPasswordVisible(prev => !prev)}
-              className='w-6 h-6 bg-center bg-no-repeat bg-[url(./assets/icons/eye.svg)] absolute top-1/2 -translate-y-1/2 right-4'
+              className={`w-6 h-6 bg-center bg-no-repeat absolute top-1/2 -translate-y-1/2 right-4 ${
+                passwordVisible
+                  ? 'bg-[url(./assets/icons/eye.svg)]'
+                  : 'bg-[url(./assets/icons/eye-slash.svg)]'
+              }`}
             />
           </FormInput>
         </div>

@@ -70,11 +70,11 @@ nav .nav-link {
   @apply font-medium text-lg leading-6 -tracking-[0.5%] text-cyber-grape;
 }
 
-.form-field .input-container {
+.form-field :is(.input-container, .text-area-container) {
   @apply relative overflow-clip bg-alabaster border-2 border-athens-gray rounded-md h-14 duration-300 focus-within:bg-transparent;
 }
 
-.form-field input {
+.form-field :is(input, textarea) {
   @apply py-4 px-5 bg-transparent w-full duration-300;
 }
 
@@ -143,4 +143,17 @@ footer .nav-link {
 
 .info-container.main .sub-heading {
   @apply text-tuatara;
+}
+
+/* ================ LANDING PAGE STYLING ================= */
+.contact-info {
+  @apply flex-1 pt-7 h-[197px] rounded-xl bg-white flex flex-col items-center gap-5 border border-titan-white;
+}
+
+.contact-info .heading {
+  @apply flex items-center justify-center gap-5 text-port-gore font-medium text-2xl leading-[30px];
+}
+
+.contact-info .content {
+  @apply font-450 text-lg leading-[23px] text-storm-dust text-center;
 }
