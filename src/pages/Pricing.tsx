@@ -3,8 +3,8 @@ import { PATHS } from 'routes/PathConstants';
 
 type Package = {
   price: number;
-  type: 'basic' | 'standard' | 'premium';
   features: string[];
+  type: 'basic' | 'standard' | 'premium';
 };
 
 const Pricing = () => {
@@ -85,7 +85,7 @@ const Pricing = () => {
   ];
 
   return (
-    <main className='bg-white-lilac px-[4.44%]'>
+    <main className='bg-white-lilac px-[4.44%] pb-[100px]'>
       <div className='info-container bg-white -mx-[4.44%] pt-[69px] pb-14 text-center'>
         <h1 className='heading'>Plans to Suit Your Business Budget</h1>
         <p className='sub-heading max-w-[888px] mx-auto'>
@@ -124,8 +124,234 @@ const Pricing = () => {
         ))}
       </section>
 
-      <section>
-        <h2></h2>
+      <section className='pt-11'>
+        <h2 className='font-medium text-[32px] leading-[46px] text-black'>Features Overview</h2>
+
+        <table id='feature-overview' className='border w-full'>
+          <thead>
+            <tr className='pb-9'>
+              <th className='font-450 text-2xl leading-[34px] text-storm-dust self-end text-left'>
+                Features & Services
+              </th>
+              {packages.map(({ type }) => (
+                <th key={type} className='package-heading'>
+                  <p className='package-heading-text'>{type}</p>
+                  <Link to={REGISTER} className='btn-primary w-full h-[51px]'>
+                    Get started
+                  </Link>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Access to dashboard</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>No. of business listings</td>
+              <td>2 businesses</td>
+              <td>6 businesses</td>
+              <td>10 businesses</td>
+            </tr>
+            <tr>
+              <td>No. of products/services</td>
+              <td>2</td>
+              <td>6</td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>No. of Images</td>
+              <td>2</td>
+              <td>4</td>
+              <td>6</td>
+            </tr>
+            <tr>
+              <td>Keywords</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Display service hours & prices</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Display address, email & contact</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Instant chat</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Reviews & ratings</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Profile visibility</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Instant notifications</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Display website & social network</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Quotes</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Bookmarks</td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Profile views</td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Verified badge</td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>Purple</td>
+              <td>Gold</td>
+            </tr>
+            <tr>
+              <td>Latest offers</td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>Accept & sell appointment</td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+            <tr>
+              <td>24/7 support</td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>
+                <span className='is-failed' />
+              </td>
+              <td>
+                <span className='is-checked' />
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   );
